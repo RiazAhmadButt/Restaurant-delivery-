@@ -1,0 +1,276 @@
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('../../Fonts/Helvetica.ttf') format('Helvetica'),
+      url('../../Fonts/jsMath-cmmi10.woff') format('jsMath-cmmi10');
+       /*  url('fonts/MyCustomFont.ttf') format('truetype'); */
+  font-weight: normal;
+  font-style: normal;
+}
+.login-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  position: relative;
+}
+
+.left-panel,
+.right-panel {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.left-panel {
+  background: linear-gradient(
+    143.42deg,
+    #06c167 0%,
+    rgba(0, 181, 94, 0.94) 49.69%,
+    #06c167 100%
+  );
+  border-radius: 0px 100px 0px 100px;
+}
+
+/* Right panel background and border radius */
+.right-panel {
+  background: #ffffff;
+  border-radius: 100px 0px 0px 100px;
+}
+.logo{
+  margin-bottom: 20px;
+}
+/* Logo styling */
+/* .logo {
+    width: 234.83px;
+    height: 162.93px;
+  } */
+
+/* Welcome text styling */
+.welcome-text {
+  font-family: "jsMath-cmmi10";
+  font-style: italic;
+  font-weight: 500;
+  font-size: 36px;
+  color: #ffffff;
+}
+
+/* Welcome message styling */
+.welcome-message {
+  font-family: "Helvetica";
+  font-style: normal;
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
+}
+
+.custom-button {
+  background-color: transparent;
+  border: 1px solid #ffffff !important;
+  border-radius: 50px !important;
+  color: white !important;
+  font-size: 18px;
+  padding: 10px 0;
+  font-family: Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+}
+
+/* Vector 1 styling */
+.vector-1 {
+  position: absolute;
+  right: 0px;
+  top: 404px;
+}
+
+/* Input frame styling */
+.input-frame {
+  width: 411px;
+  height: 56px;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  margin-bottom: 20px; 
+}
+
+/* Input text styling */
+.input-text {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* Right panel welcome text styling */
+.login-welcome {
+  font-family: "jsMath-cmmi10";
+  font-style: italic;
+  font-weight: 500;
+  font-size: 36px;
+  color: #000000;
+  margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+/* Login message styling */
+.login-message {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 40px; /* Adjust the margin as needed */
+}
+
+/* Email frame and Password frame styling */
+.email-frame
+{
+  width: 411px;
+  height: 46px;
+  border: 1px solid #000000;
+  border-radius: 100px;
+  margin-bottom: 20px; 
+}
+
+/* Input text for email and password */
+.email-text,
+.password-text {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  padding-left: 20px;
+  color: #000000;
+}
+
+/* Login button styling */
+.login-button {
+  width: 226px;
+  height: 56px;
+  background: #00994f;
+  border-radius: 100px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  border: none;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+/* Forgot password and new account text styling */
+.forgot-password,
+.new-account {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+/* Vector 2 styling */
+.vector-2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.sign-up-link {
+  color: #00994f;
+  text-decoration: none;
+}
+
+
+
+
+/* Mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    height: 50vh;
+    border-radius: 0;
+  }
+
+  .left-panel {
+    border-radius: 0px 100px 0px  100px;
+  }
+
+  .right-panel {
+    border-radius: 100px 100px 0px 0px;
+  }
+
+  .custom-button {
+    display: none; /* Hide the button on mobile screens */
+  }
+  .vector-1 img{
+    width: 100px;
+    height: 100px;
+  }
+  .vector-1
+  {
+    top: 155px;
+  }
+ .vector-2
+ {
+  display: none; /* Hide vectors on mobile screens */
+}
+  .welcome-text,
+  .welcome-message {
+    display: none;
+  }
+.signupParent{
+  display: none;
+}
+  .login-welcome,
+  .login-message {
+    text-align: center;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px;
+  }
+
+  .input-frame {
+    width: 90%; /* Adjust input width for mobile */
+  }
+
+  .login-button {
+    width: 90%;
+    height: 50px;
+  }
+
+  .forgot-password,
+  .new-account {
+    font-size: 16px;
+  }
+  .email-frame
+  {
+    border: 1px solid #000000;
+    border-radius: 100px;
+    margin-bottom: 5px; 
+  }
+  .email-text,
+  .password-text {
+    
+    font-weight: 300;
+    font-size: 12px;
+    padding-left: 20px;
+    color: #000000;
+  }  
+
+}
