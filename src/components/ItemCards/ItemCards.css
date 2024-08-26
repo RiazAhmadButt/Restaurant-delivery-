@@ -1,0 +1,104 @@
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  position: relative;
+  width: 345px;
+  height: 309px;
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 236px;
+  background: #dddddd;
+  border-radius: 15px 15px 0 0;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.like-icon {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 16px;
+  right: 16px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-details {
+  padding: 10px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-caption {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #000000;
+  line-height: 19.07px;
+}
+.product-catagory {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.34px;
+  color: #666666;
+}
+
+.product-rating {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #000000;
+}
+
+.product-rating::before {
+  content: "★"; /* This adds the star before the rating */
+  color: #ffbe41; /* Star color */
+  margin-right: 5px;
+}
+
+.product-caption,
+.product-rating {
+  margin: 0;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .cards-container {
+      justify-content: center;
+    }
+    
+    .product-card {
+      width: 100%; /* Full width on tablets and smaller screens */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .product-card {
+      width: 100%; /* Full width on mobile screens */
+    }
+  }

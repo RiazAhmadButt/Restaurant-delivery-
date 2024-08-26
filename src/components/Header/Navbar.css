@@ -1,0 +1,177 @@
+.custom-navbar {
+  background-color: #ffffff;
+  padding: 16px 0;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.menu-icon {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.close-icon {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.location-frame {
+  width: 400px;
+  height: 50px;
+  border: 1px solid #dedddb;
+  border-radius: 8px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.location-icon {
+  width: 20px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.location-text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #4f4f4f;
+}
+
+.world-icon {
+  background-color: rgba(247, 247, 247, 0.97);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.language {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #4f4f4f;
+}
+
+.vertical-divider {
+  width: 1px;
+  height: 24px;
+  background-color: #dedddb;
+}
+
+.icon {
+  width: 24px;
+  height: auto;
+}
+
+.icon-frame {
+  background: rgba(247, 247, 247, 0.97);
+  border-radius: 8px;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.signup-btn {
+  background-color: #06c167;
+  border-radius: 8px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+.side-drawer {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease-in-out;
+  z-index: 1050;
+  padding-top: 20px;
+}
+
+.side-drawer.open {
+  right: 0;
+}
+
+.side-drawer-content {
+  padding: 20px;
+}
+
+.side-drawer .location-frame,
+.side-drawer .language-selection,
+.side-drawer .icon-frame {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 992px) {
+  .side-drawer {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-navbar {
+    padding: 16px;
+    flex-direction: column;
+  }
+
+  .side-menu {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .side-menu.open {
+    transform: translateX(0);
+  }
+
+  .location-frame {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .icon-frame {
+    width: 48px;
+    height: 48px;
+  }
+
+  .signup-btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .hamburger-menu {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    margin-left: auto;
+  }
+
+  .right-side {
+    display: none;
+  }
+}
