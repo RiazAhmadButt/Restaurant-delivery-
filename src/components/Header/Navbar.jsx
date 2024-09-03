@@ -6,8 +6,8 @@ import downArrow from "../../images/Vector.png";
 import world from "../../images/world.png";
 import cart from "../../images/Cart.png";
 import like from "../../images/Like.png";
-// import menuIcon from '../../images/menu-icon.png';
-// import closeIcon from '../../images/close-icon.png';
+import menuIcon from '../../images/Group 9932.png';
+import closeIcon from '../../images/close-icon-13577.png';
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -28,7 +28,7 @@ const Navbar = () => {
         {/* Hamburger Menu for Mobile */}
         <div className="d-lg-none">
           <img
-            src={like}
+            src={menuIcon}
             alt="Menu"
             className="menu-icon"
             onClick={toggleDrawer}
@@ -71,7 +71,7 @@ const Navbar = () => {
           <div className="d-flex justify-content-between align-items-center px-3 py-2">
             <img src={logo} alt="Logo" className="logo" />
             <img
-              src={like}
+              src={closeIcon}
               alt="Close"
               className="close-icon"
               onClick={toggleDrawer}

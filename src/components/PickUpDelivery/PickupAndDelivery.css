@@ -1,0 +1,109 @@
+.top-layout {
+  width: 528px;
+  border: 1px solid #dedddb;
+  border-radius: 8px;
+  position: relative;
+  top: 40px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  height: 68px;
+  border-radius: 4px;
+  background: #ececec;
+  width: 70%;
+  margin: auto;
+  margin-top: 27px;
+}
+
+.pickup-button,
+.delivery-button {
+  height: 68px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.single-button {
+  width: 156px;
+  height: 57px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #707070;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.07px;
+}
+
+.single-button.active {
+  background-color: #ffffff;
+  border: 1px solid #dedddb;
+  color: #06c167;
+}
+
+.review-section {
+  width: 441px;
+  height: 68px;
+  background: #ececec;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.review-text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #707070;
+}
+.ecommerceChekoutImg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+.hungry {
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21.79px;
+  color: #000000;
+}
+.hungryDisc {
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.07px;
+  color: #707070;
+}
+.totalPrice {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 40px;
+  margin-top: 50px;
+}
+.incl {
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.07px;
+  color: #707070;
+}
+
+.total {
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.07px;
+}

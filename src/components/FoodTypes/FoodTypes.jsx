@@ -30,7 +30,7 @@ const FoodTypes = () => {
   };
 
   return (
-    <div className="container card-row">
+    <div className="container food-container card-row">
       {cardData.map((card, index) => (
         <div
           key={index}
