@@ -14,8 +14,8 @@
   color: #707070;
   margin-top: 10px;
 }
-.returantContainer{
-  background: #F7F7F7F7;
+.returantContainer {
+  background: #f7f7f7f7;
   box-shadow: 0px 0px 4px 0px #00000026 inset;
   padding-top: 20px;
   margin-bottom: 170px;
@@ -34,11 +34,97 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 19.07px;
- color: #06c167;;
-  margin: 0 10px; 
-  cursor: pointer; 
+  color: #06c167;
+  margin: 0 10px;
+  cursor: pointer;
 }
 
 .btn-primary:hover {
-  color: #B0B0B0;
+  color: #b0b0b0;
+}
+.availableDealText {
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.68px;
+}
+
+/* Container for the entire search bar */
+.search-bar-container {
+  width: 281px;
+  height: 50px;
+  background: rgba(247, 247, 247, 0.968627);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Icon container */
+.search-icon {
+  left: calc(50% - 17px / 2 - 112px);
+  top: calc(50% - 17px / 2 - 0.5px);
+}
+
+/* Text within the search bar */
+.search-text {
+  width: 105px;
+  height: 19px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #4f4f4f;
+}
+/* Container for the menu categories */
+.menu-categories-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  height: 19px;
+}
+
+/* Style for each menu category */
+.menu-category {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+  flex: none;
+  flex-grow: 0;
+}
+.seach-parent{
+  display: flex;
+  margin: 30px 0px;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Dropdown Button Container */
+.dropdown-button {
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  background: #FFFFFF;
+  border: 1px solid #DEDDDB;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 100px;
+}
+
+.arrow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.vector {
+  color: #F1592A;
+  font-size: 18px; 
 }

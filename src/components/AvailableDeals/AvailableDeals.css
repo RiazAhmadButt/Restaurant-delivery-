@@ -1,0 +1,72 @@
+/* Container for the entire discount card */
+.discount-card-container {
+    box-sizing: border-box;
+    width: 280px;
+    height: 104px;
+    border: 1px solid #dedddb;
+    border-radius: 8px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 10px;
+}
+.discount-card-parent{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Discount code text */
+.discount-code {
+  width: 136px;
+  height: 19px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+
+/* Discount details text */
+.discount-details {
+  width: 256px;
+  height: 38px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #707070;
+}
+
+
+/* --- Responsive Styles --- */
+
+/* For tablets and small desktops */
+@media (max-width: 768px) {
+  .discount-card-container {
+      width: 220px; /* Reduce width for smaller screens */
+  }
+  .discount-card-parent {
+      gap: 15px; /* Reduce gap between cards */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .discount-card-parent {
+      flex-direction: column; /* Stack cards vertically on mobile */
+      gap: 10px; /* Reduce gap further for mobile */
+  }
+  .discount-card-container {
+      width: 100%; /* Make card take full width of the screen */
+      height: auto; /* Auto height to adapt to content */
+      padding: 15px; /* Increase padding for better readability */
+  }
+  .discount-code, .discount-details {
+      font-size: 12px; /* Smaller font size for mobile */
+      line-height: 16px;
+  }
+}

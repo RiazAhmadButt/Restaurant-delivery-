@@ -88,3 +88,36 @@
   color: #06C167;
 }
 
+@media (max-width: 768px) {
+  
+  .image-wrapper {
+    height: auto;
+  }
+  .selectItem {
+    font-size: 20px;
+  }
+  .favourites-button-container {
+
+    justify-content: center; /* Center the content */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  
+  .header-page {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .selectItem {
+    font-size: 18px;
+  }
+  .favourites-button-container {
+    width: 100%; /* Full-width button */
+    height: 40px; /* Slightly smaller height */
+  }
+  .favourites-text {
+    font-size: 12px; /* Smaller text for mobile */
+  }
+}
