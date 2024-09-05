@@ -6,13 +6,15 @@ import Navbar from "./components/Header/Navbar";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import AllRestaurants from "./pages/AllRestaurants/AllRestaurants";
+import SelectItem from "./pages/SelectItem/SelectItem";
 
 function App() {
   return (
     <>
     <Navbar />
     {/* <Home /> */}
-    <AllRestaurants/>
+    {/* <AllRestaurants/> */}
+    <SelectItem/>
     <Footer/>
     </>
     // <Router>

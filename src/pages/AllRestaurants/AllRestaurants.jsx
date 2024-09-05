@@ -5,6 +5,7 @@ import RestaurantsProducts from "../../components/RestaurantsProducts/Restaurant
 import PickupAndDelivery from "../../components/PickUpDelivery/PickupAndDelivery";
 import SelectProduct from "../../components/SelectProduct/SelectProduct";
 import AvailableDeals from "../../components/AvailableDeals/AvailableDeals";
+import MenuContainerSlider from "../../components/MenuContainerSlider/MenuContainerSlider";
 
 const AllRestaurants = () => {
   return (
@@ -61,22 +62,7 @@ const AllRestaurants = () => {
               className="search-input"
             />
           </div>
-          <div className="menu-categories-container">
-            <div className="menu-category">Popular (1)</div>
-            <div className="menu-category">Appetizers (2)</div>
-            <div className="menu-category">Pasta (2)</div>
-            <div className="menu-category">Fries (3)</div>
-            <div className="menu-category">Cheesy Delight (4)</div>
-            <div className="menu-category">Burgers (4)</div>
-            <div className="menu-category">Pizza (4)</div>
-            <div className="menu-category">Beverages (4)</div>
-            <div className="menu-category">Family deal (4)</div>
-          </div>
-          <div className="dropdown-button">
-            <div className="arrow-container">
-              <span className="vector">&gt;</span>
-            </div>
-          </div>
+         <MenuContainerSlider/>
         </div>
       </div>
 
