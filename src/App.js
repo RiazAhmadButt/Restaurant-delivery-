@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import AllRestaurants from "./pages/AllRestaurants/AllRestaurants";
 import SelectItem from "./pages/SelectItem/SelectItem";
+import Payment from "./pages/Payment/Payment";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
     <Navbar />
     {/* <Home /> */}
     {/* <AllRestaurants/> */}
-    <SelectItem/>
+    {/* <SelectItem/> */}
+    <Payment/>
     <Footer/>
     </>
     // <Router>

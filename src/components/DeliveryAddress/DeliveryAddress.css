@@ -1,0 +1,240 @@
+/* Container for delivery address */
+.delivery-address-container {
+  width: 100%;
+  max-width: 600px;
+  height: auto; /* Adjust for content */
+  border-radius: 15px;
+  border: 1px solid #ececec;
+  background-color: #ffffff;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* Header section */
+.delivery-address-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Change button text */
+.change-text {
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.07px;
+  color: #666666;
+}
+
+/* Address label */
+.delivery-address {
+  font-family: "Open Sans";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32.68px;
+  color: #000000;
+}
+
+/* Home address section */
+.homeAddress {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Address info */
+.address-info {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 12px;
+  color: #666666;
+}
+
+/* Option frame styling */
+.option-frame {
+  width: 100%;
+  max-width: 196px;
+  height: auto;
+  padding: 8px 14px;
+  border-radius: 50px;
+  border: 1px solid #dedddb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Leave it at the door text */
+.leave-at-door {
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Note frame styling */
+.note-frame {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #dedddb;
+  margin: 30px 0;
+}
+
+/* Input field for the note */
+.note {
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 400;
+  color: #666666;
+  border: none;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  resize: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Contactless delivery section */
+.contactless-delivery-parent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Contactless delivery label */
+.contactless-delivery {
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 400;
+  color: #000000;
+}
+
+/* Toggle button container */
+.frame-gray {
+  width: 40px;
+  height: 24px;
+  background: #cdcdcd;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Inner button for toggle */
+.frame-white {
+  width: 19px;
+  height: 18px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.2s ease;
+}
+
+/* On state */
+.frame-gray.active .frame-white {
+  transform: translateX(18px);
+}
+
+/* Home icon */
+.home-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Vector styling */
+.vector {
+  width: 100%;
+  height: 100%;
+  background: #666666;
+}
+
+/* Media Queries for responsiveness */
+
+/* Tablet devices */
+@media (max-width: 768px) {
+  .delivery-address-container {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .delivery-address {
+    font-size: 20px;
+  }
+
+  .change-text {
+    font-size: 12px;
+  }
+
+  .homeAddress {
+    gap: 8px;
+  }
+
+  .address-info {
+    font-size: 10px;
+  }
+
+  .note-frame {
+    margin: 20px 0;
+  }
+
+  .contactless-delivery {
+    font-size: 12px;
+  }
+
+  .frame-gray {
+    width: 35px;
+    height: 22px;
+  }
+
+  .frame-white {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .delivery-address-container {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .delivery-address {
+    font-size: 18px;
+  }
+
+  .change-text {
+    font-size: 12px;
+  }
+
+  .homeAddress {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .address-info {
+    font-size: 10px;
+  }
+
+  .note-frame {
+    margin: 15px 0;
+  }
+
+  .leave-at-door {
+    font-size: 12px;
+  }
+
+  .contactless-delivery {
+    font-size: 12px;
+  }
+
+  .frame-gray {
+    width: 30px;
+    height: 20px;
+  }
+
+  .frame-white {
+    width: 14px;
+    height: 14px;
+  }
+}

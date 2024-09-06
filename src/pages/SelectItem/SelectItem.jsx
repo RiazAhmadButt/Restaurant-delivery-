@@ -23,7 +23,7 @@ const SelectItem = () => {
   };
 
   return (
-    <div>
+    <div className="select-container-parent">
       <div className="select-container container">
         <div className="header-frame">
           <div className="background-image">
