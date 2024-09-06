@@ -1,4 +1,3 @@
-/* Container for centering the entire content */
 .select-container {
   display: flex;
   justify-content: center;
@@ -8,12 +7,14 @@
   height: auto;
   padding: 20px;
   box-sizing: border-box;
+  border: 1px solid #dedddb;
+  border-radius: 10px;
+  padding: 30px 0px;
+  margin-bottom: 30px;
 }
 
-/* Frame 84 - Header Frame */
 .header-frame {
-  width: 100%;
-  max-width: 975px; /* Max width to maintain proportions */
+  max-width: 975px;
   height: auto;
   background: #e8e8e8;
   border-radius: 8px 8px 0px 0px;
@@ -42,6 +43,11 @@
   height: 32px;
   right: 20px;
   top: 20px;
+}
+
+.top-heading-price-parent {
+  width: 909px;
+  height: 115px;
 }
 
 /* Icon Vector (Close button styling) */
@@ -209,8 +215,7 @@
 
 /* Preferences Heading - Any specific preferences? */
 .preferences-heading {
-  width: 422px;
-  height: 22px;
+  height: auto;
   font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -257,103 +262,95 @@
   width: 15px;
   left: 91.38%;
   top: 50%;
-  transform: translateY(-50%) rotate(90deg); /* Mimicking matrix(0, 1, 1, 0, 0, 0) as a 90-degree rotation */
+  transform: translateY(-50%) rotate(90deg);
   border: 2px solid #a4a4a4;
 }
 /* Container for the entire cart section */
 .cart-container {
-    position: relative;
-  }
-  
-  /* Group 12 - Circle with number */
-  .circle-group {
-    position: absolute;
-    width: 32px;
-    height: 32px;
-    left: 46px;
-    top: 1204px;
-  }
-  
-  .circle-icon {
-    box-sizing: border-box;
-    width: 32px;
-    height: 32px;
-    background: #FFFFFF;
-    border: 1px solid #DEDDDB;
-    border-radius: 50%;
-  }
-  
-  .circle-border {
-    position: absolute;
-    left: 5.64%;
-    right: 92.88%;
-    top: 95.09%;
-    bottom: 4.91%;
-    border: 1.5px solid #D0D0D2;
-  }
-  
-  .circle-number {
-    position: absolute;
-    width: 10px;
-    left: calc(50% - 10px/2 - 389.5px);
-    top: 94.31%;
-    bottom: 4.18%;
-    font-family: 'Open Sans', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 19px;
-    color: #000000;
-  }
-  
-  /* Group 11 - Checkbox with tick */
-  .checkbox-group {
-  
-    width: 32px;
-    height: 32px;
-    left: 117px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+/* Group 12 - Circle with number */
+.circle-group {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  left: 46px;
+  top: 1204px;
+}
+
+.circle-icon {
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  background: #ffffff;
+  border: 1px solid #dedddb;
+  border-radius: 50%;
+}
+
+.circle-border {
+  position: absolute;
+  left: 5.64%;
+  right: 92.88%;
+  top: 95.09%;
+  bottom: 4.91%;
+  border: 1.5px solid #d0d0d2;
+}
+
+/* Group 11 - Checkbox with tick */
+.checkbox-group {
+  width: 100px;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Add to Cart Button */
+.cart-button {
+  width: 753px;
+  height: 68px;
+  background: #ececec;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-button-text {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #707070;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .select-container {
+    padding: 10px;
   }
-  
-  .checkbox-icon {
-    box-sizing: border-box;
-    width: 32px;
-    height: 32px;
-    background: #FFFFFF;
-    border: 1px solid #DEDDDB;
-    border-radius: 50%;
+
+  .top-heading-price-parent,
+  .variation-frame,
+  .preferences-container,
+  .preferences-border,
+  .preferences-container-input {
+    width: 100%;
   }
-  
-  .checkbox-tick {
-  
-    height: 19.39px;
-    left: 12.82%;
-    right: 85.54%;
-    top: calc(50% - 19.39px/2 + 578.5px);
-    background: #06C167;
-    border-radius: 50%;
+  .line {
+    width: 100%;
   }
-  
-  /* Add to Cart Button */
+
   .cart-button {
-  
-    width: 753px;
-    height: 68px;
-    left: calc(50% - 753px/2 + 77px);
+    width: 100%;
+  }
 
-    background: #ECECEC;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .cart-button-text {
-    font-family: 'Open Sans', sans-serif;
-    font-style: normal;
-    font-weight: 600;
+  .circle-number {
     font-size: 14px;
-    line-height: 19px;
-    color: #707070;
   }
-  
+}
