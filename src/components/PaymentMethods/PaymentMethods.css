@@ -1,7 +1,8 @@
 /* Container for payment options */
 .payment-options-container {
-  width: 600px;
-  height: 451px;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
   border-radius: 15px;
   border: 1px solid #ececec;
   background-color: #ffffff;
@@ -69,9 +70,78 @@
   color: #666666;
   margin-top: 30px;
 }
-.icon-parent{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+
+.icon-parent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsive Design */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .payment-options-container {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .payment-options {
+    font-size: 20px;
+  }
+
+  .payment-option-frame {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+
+  .payment-option-label {
+    font-size: 13px;
+  }
+
+  .option-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .radio {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .payment-options-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .payment-options {
+    font-size: 18px;
+  }
+
+  .payment-option-frame {
+    padding: 10px;
+    margin-bottom: 14px;
+  }
+
+  .payment-option-label {
+    font-size: 12px;
+  }
+
+  .option-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .radio {
+    width: 16px;
+    height: 16px;
+  }
+
+  .pay-with-card {
+    font-size: 10px;
+    margin-top: 20px;
+  }
 }

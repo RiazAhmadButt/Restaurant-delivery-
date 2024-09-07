@@ -1,0 +1,165 @@
+/* Order Summary Container */
+.order-summary {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 15px;
+  padding: 18px;
+  margin: 20px auto;
+}
+
+.your-order-from {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: #000000;
+}
+
+.benediction {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #666666;
+  margin-top: 8px;
+}
+
+/* Item List and Pricing */
+.item-loaded-fries,
+.subtotal,
+.delivery,
+.service-fee {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.item-loaded-fries span,
+.subtotal span,
+.delivery span,
+.units,
+.service-fee span {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #707070;
+}
+
+.subtotal-price,
+.delivery-price,
+.service-price,
+.item-price {
+  color: #707070;
+}
+
+.delivery-price {
+  color: #06c167 !important;
+}
+
+/* Total Section */
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  font-family: "Open Sans";
+  font-weight: 700;
+  font-size: 24px;
+  color: #000000;
+}
+
+.total-price {
+  font-family: "Open Sans";
+  font-weight: 700;
+  font-size: 24px;
+  color: #000000;
+}
+
+/* Divider Line */
+.divider {
+  border: 1px solid #deddcb;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+
+/* Tablet Screen */
+@media (max-width: 768px) {
+  .order-summary {
+    padding: 16px;
+  }
+
+  .your-order-from {
+    font-size: 20px;
+  }
+
+  .benediction {
+    font-size: 12px;
+  }
+
+  .item-loaded-fries span,
+  .subtotal span,
+  .delivery span,
+  .service-fee span,
+  .units {
+    font-size: 13px;
+  }
+
+  .subtotal-price,
+  .delivery-price,
+  .service-price,
+  .item-price {
+    font-size: 13px;
+  }
+
+  .total {
+    margin-top: 60px;
+    font-size: 20px;
+  }
+
+  .total-price {
+    font-size: 20px;
+  }
+}
+
+/* Mobile Screen */
+@media (max-width: 480px) {
+  .order-summary {
+    padding: 12px;
+  }
+
+  .your-order-from {
+    font-size: 18px;
+  }
+
+  .benediction {
+    font-size: 12px;
+  }
+
+  .item-loaded-fries span,
+  .subtotal span,
+  .delivery span,
+  .service-fee span,
+  .units {
+    font-size: 12px;
+  }
+
+  .subtotal-price,
+  .delivery-price,
+  .service-price,
+  .item-price {
+    font-size: 12px;
+  }
+
+  .total {
+    margin-top: 50px;
+    font-size: 18px;
+  }
+
+  .total-price {
+    font-size: 18px;
+  }
+}

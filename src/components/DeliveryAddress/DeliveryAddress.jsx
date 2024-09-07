@@ -29,7 +29,7 @@ const DeliveryAddress = () => {
 
       <div className="note-frame">
         <textarea
-          rows="4"
+          rows="2"
           placeholder="Note to rider - e.g. building, landmark"
           className="note"
         ></textarea>

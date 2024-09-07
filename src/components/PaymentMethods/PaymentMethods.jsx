@@ -27,7 +27,6 @@ const PaymentMethods = () => {
             <img src={paypal} alt="PayPal" className="option-icon" />
             <span className="payment-option-label">PayPal</span>
           </div>
-
           <div
             className={`radio ${selectedOption === "paypal" ? "selected" : ""}`}
           ></div>
