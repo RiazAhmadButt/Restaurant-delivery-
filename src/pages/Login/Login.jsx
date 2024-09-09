@@ -78,7 +78,9 @@ const Login = () => {
             <input
               type="text"
               placeholder="Email"
-              className={`input-frame email-frame input-text email-text ${errors.email ? "input-error" : ""}`}
+              className={`input-frame email-frame input-text email-text ${
+                errors.email ? "input-error" : ""
+              }`}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -87,14 +89,18 @@ const Login = () => {
             <input
               type="password"
               placeholder="Password"
-              className={`input-frame email-frame input-text email-text ${errors.password ? "input-error" : ""}`}
+              className={`input-frame email-frame input-text email-text ${
+                errors.password ? "input-error" : ""
+              }`}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
             {errors.password && <p className="error-text">{errors.password}</p>}
 
             <p className="forgot-password">Forgot your password?</p>
-            <button type="submit" className="login-button">Login</button>
+            <button type="submit" className="login-button">
+              Login
+            </button>
           </form>
 
           <p className="new-account">

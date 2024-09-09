@@ -70,10 +70,10 @@ const cardData = [
 
 const ItemCards = () => {
   return (
-    <div className="container cards-wrapper">
-      <div className="cards-container">
+    <div className="container items-cards-container">
+      <div className="items-cards-container">
         {cardData.map((card, index) => (
-          <div key={index} className="product-card">
+          <div key={index} className="item-product-card">
             <div className="image-container">
               <img src={card.image} alt={card.caption} className="product-image" />
               <div className="like-icon">

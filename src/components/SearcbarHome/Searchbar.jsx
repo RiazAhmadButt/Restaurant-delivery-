@@ -4,8 +4,8 @@ import "./SearchBar.css";
 
 const SearchBar = () => {
   return (
-    <div className="serachbar">
-      <div className="search-bar-container">
+    <div className="homeSerachbar">
+      <div className="home-search-bar-container">
         <img src={searchIcon} alt="Search Icon" />
         <input
           type="text"

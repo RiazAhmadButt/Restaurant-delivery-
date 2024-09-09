@@ -1,5 +1,11 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { useState } from "react";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 import Navbar from "./components/Header/Navbar";
@@ -10,22 +16,59 @@ import SelectItem from "./pages/SelectItem/SelectItem";
 import Payment from "./pages/Payment/Payment";
 
 function App() {
+  // State to manage authentication
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+
+  // Function to simulate login (you'll replace this with actual login logic)
+  const handleLogin = () => {
+    setIsAuthenticated(true);
+  };
+
+  // Function to simulate logout
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+  };
+
   return (
-    <>
-    {/* <Navbar /> */}
-    {/* <Home /> */}
-    {/* <AllRestaurants/> */}
-    {/* <SelectItem/> */}
-    {/* <Payment/>
-    <Footer/> */}
-   
     <Router>
+      {isAuthenticated && <Navbar handleLogout={handleLogout} />}{" "}
+      {/* Navbar only if authenticated */}
       <Routes>
-        <Route path="/" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={
+            isAuthenticated ? (
+              <Navigate to="/" />
+            ) : (
+              <Login onLogin={handleLogin} />
+            )
+          }
+        />
+        <Route
+          path="/"
+          element={isAuthenticated ? <Navigate to="/" /> : <SignUp />}
+        />
+        <Route
+          path="/home"
+          element={isAuthenticated ? <Home /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/all-restaurants"
+          element={
+            isAuthenticated ? <AllRestaurants /> : <Navigate to="/login" />
+          }
+        />
+        <Route
+          path="/select-item"
+          element={isAuthenticated ? <SelectItem /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/payment"
+          element={isAuthenticated ? <Payment /> : <Navigate to="/login" />}
+        />
       </Routes>
+      {isAuthenticated && <Footer />}
     </Router>
-    </>
   );
 }
 
