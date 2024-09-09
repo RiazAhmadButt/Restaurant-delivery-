@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo2 from "../../images/image logo copy 2.png";
 import vector1 from "../../images/Vector 1.png";
@@ -6,6 +6,48 @@ import vector2 from "../../images/Vector 2.png";
 import "./Login.css";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
+
+  // Email validation regex
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Validation handler
+  const validate = () => {
+    let tempErrors = {};
+
+    // Email validation
+    if (!email) {
+      tempErrors.email = "Email is required";
+    } else if (!emailRegex.test(email)) {
+      tempErrors.email = "Invalid email format";
+    }
+
+    // Password validation
+    if (!password) {
+      tempErrors.password = "Password is required";
+    } else if (password.length < 6) {
+      tempErrors.password = "Password must be at least 6 characters long";
+    }
+
+    setErrors(tempErrors);
+
+    // Return true if no errors
+    return Object.keys(tempErrors).length === 0;
+  };
+
+  // Submit handler
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      console.log("Form submitted successfully!");
+      // Proceed with form submission (e.g., API call)
+    } else {
+      console.log("Validation failed.");
+    }
+  };
+
   return (
     <div>
       <div className="login-container">
@@ -17,12 +59,12 @@ const Login = () => {
             <h1 className="welcome-text text-center">Welcome</h1>
             <p className="welcome-message">To stay connected with us</p>
             <p className="welcome-message">
-              please login with your personal info.
+              Please log in with your personal info.
             </p>
             <div className="signupParent">
               <button className="btn custom-button w-100">Sign in</button>
             </div>
-            <div class="vector-1">
+            <div className="vector-1">
               <img src={vector1} alt="vector" />
             </div>
           </div>
@@ -32,18 +74,29 @@ const Login = () => {
           <h1 className="login-welcome">Welcome</h1>
           <p className="login-message">Login into your account to continue</p>
 
-          <input
-            type="text"
-            placeholder="Email"
-            className="input-frame email-frame input-text email-text"
-          />
-          <input
-            type="password"
-            placeholder="password"
-            className="input-frame email-frame input-text email-text"
-          />
-          <p className="forgot-password">Forgot your password?</p>
-          <button className="login-button">Login</button>
+          <form className="form-fields" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Email"
+              className={`input-frame email-frame input-text email-text ${errors.email ? "input-error" : ""}`}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            {errors.email && <p className="error-text">{errors.email}</p>}
+
+            <input
+              type="password"
+              placeholder="Password"
+              className={`input-frame email-frame input-text email-text ${errors.password ? "input-error" : ""}`}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            {errors.password && <p className="error-text">{errors.password}</p>}
+
+            <p className="forgot-password">Forgot your password?</p>
+            <button type="submit" className="login-button">Login</button>
+          </form>
+
           <p className="new-account">
             Don't have an account?{" "}
             <Link to="/" className="sign-up-link">

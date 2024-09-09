@@ -1,8 +1,8 @@
 @font-face {
-  font-family: 'MyCustomFont';
-  src: url('../../Fonts/Helvetica.ttf') format('Helvetica'),
-      url('../../Fonts/jsMath-cmmi10.woff') format('jsMath-cmmi10');
-       /*  url('fonts/MyCustomFont.ttf') format('truetype'); */
+  font-family: "MyCustomFont";
+  src: url("../../Fonts/Helvetica.ttf") format("Helvetica"),
+    url("../../Fonts/jsMath-cmmi10.woff") format("jsMath-cmmi10");
+  /*  url('fonts/MyCustomFont.ttf') format('truetype'); */
   font-weight: normal;
   font-style: normal;
 }
@@ -40,7 +40,7 @@
   background: #ffffff;
   border-radius: 100px 0px 0px 100px;
 }
-.logo{
+.logo {
   margin-bottom: 20px;
 }
 /* Logo styling */
@@ -96,7 +96,7 @@
   height: 56px;
   border: 1px solid #ffffff;
   border-radius: 100px;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 /* Input text styling */
@@ -131,13 +131,12 @@
 }
 
 /* Email frame and Password frame styling */
-.email-frame
-{
+.email-frame {
   width: 411px;
   height: 46px;
   border: 1px solid #000000;
   border-radius: 100px;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 /* Input text for email and password */
@@ -177,7 +176,7 @@
   font-size: 18px;
   text-align: center;
   color: #000000;
-  margin-bottom: 10px; /* Adjust the margin as needed */
+  margin-bottom: 10px; 
 }
 
 /* Vector 2 styling */
@@ -191,8 +190,24 @@
   text-decoration: none;
 }
 
+.input-error {
+  border: 1px solid red;
+}
 
+.error-text {
+  color: red;
+  font-size: 12px;
+  width: 100%;
+  margin-left: 100px;
+}
 
+.form-fields {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 /* Mobile screens (max-width: 768px) */
 @media (max-width: 768px) {
@@ -208,7 +223,7 @@
   }
 
   .left-panel {
-    border-radius: 0px 100px 0px  100px;
+    border-radius: 0px 100px 0px 100px;
   }
 
   .right-panel {
@@ -218,25 +233,23 @@
   .custom-button {
     display: none; /* Hide the button on mobile screens */
   }
-  .vector-1 img{
+  .vector-1 img {
     width: 100px;
     height: 100px;
   }
-  .vector-1
-  {
+  .vector-1 {
     top: 155px;
   }
- .vector-2
- {
-  display: none; /* Hide vectors on mobile screens */
-}
+  .vector-2 {
+    display: none; /* Hide vectors on mobile screens */
+  }
   .welcome-text,
   .welcome-message {
     display: none;
   }
-.signupParent{
-  display: none;
-}
+  .signupParent {
+    display: none;
+  }
   .login-welcome,
   .login-message {
     text-align: center;
@@ -258,19 +271,16 @@
   .new-account {
     font-size: 16px;
   }
-  .email-frame
-  {
+  .email-frame {
     border: 1px solid #000000;
     border-radius: 100px;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
   }
   .email-text,
   .password-text {
-    
     font-weight: 300;
     font-size: 12px;
     padding-left: 20px;
     color: #000000;
-  }  
-
+  }
 }

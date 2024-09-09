@@ -12,19 +12,20 @@ import Payment from "./pages/Payment/Payment";
 function App() {
   return (
     <>
-    <Navbar />
+    {/* <Navbar /> */}
     {/* <Home /> */}
     {/* <AllRestaurants/> */}
     {/* <SelectItem/> */}
-    <Payment/>
-    <Footer/>
+    {/* <Payment/>
+    <Footer/> */}
+   
+    <Router>
+      <Routes>
+        <Route path="/" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
     </>
-    // <Router>
-    //   <Routes>
-    //     <Route path="/" element={<SignUp />} />
-    //     <Route path="/login" element={<Login />} />
-    //   </Routes>
-    // </Router>
   );
 }
 
