@@ -59,7 +59,7 @@ const SignUp = () => {
       <div className="login-container">
         <div className="left-panel">
           <div>
-            <div className="logo d-flex justify-content-center align-item-center">
+            <div className="logo d-flex justify-content-center align-item-center w-100">
               <img src={logo2} alt="Logo" />
             </div>
             <h1 className="welcome-text text-center">Welcome</h1>

@@ -32,7 +32,6 @@ const AllRestaurants = () => {
         <div className="seach-parent">
           <div className="search-bar-container">
             <div className="search-icon">
-              {/* Assuming you have a search icon SVG or image */}
               <svg
                 width="17"
                 height="17"
@@ -62,7 +61,7 @@ const AllRestaurants = () => {
               className="search-input"
             />
           </div>
-         <MenuContainerSlider/>
+          <MenuContainerSlider />
         </div>
       </div>
 

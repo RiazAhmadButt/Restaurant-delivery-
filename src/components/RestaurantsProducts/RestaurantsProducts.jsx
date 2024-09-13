@@ -1,9 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import image20 from "../../images/image 20.png";
 import plus from "../../images/Vector.png";
 import "./RestaurantsProducts.css";
 
 const RestaurantsProducts = () => {
+  const navigate = useNavigate();
+
   const products = [
     {
       title: "Loaded Fries",
@@ -51,6 +54,10 @@ const RestaurantsProducts = () => {
       imageSrc: image20,
     },
   ];
+  const handleProductClick = (product) => {
+    navigate("/select-item", { state: { product } });
+  };
+
   return (
     <>
       {products.map((item, index) => (
@@ -58,7 +65,7 @@ const RestaurantsProducts = () => {
           <div>
             <p className="dishes">{item.dishes}</p>
           </div>
-          <div className="product-card" key={index}>
+          <div className="product-card" key={index} onClick={() => handleProductClick(item)}>
             <div className="product-info">
               <h3 className="product-title">{item.title}</h3>
               <p className="product-price">Rs. {item.price}</p>

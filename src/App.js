@@ -34,7 +34,7 @@ function App() {
       {isAuthenticated && <Navbar handleLogout={handleLogout} />}{" "}
       {/* Navbar only if authenticated */}
       <Routes>
-        <Route
+        {/* <Route
           path="/login"
           element={
             isAuthenticated ? (
@@ -47,13 +47,13 @@ function App() {
         <Route
           path="/"
           element={isAuthenticated ? <Navigate to="/" /> : <SignUp />}
-        />
+        /> */}
         <Route
-          path="/home"
+          path="/"
           element={isAuthenticated ? <Home /> : <Navigate to="/login" />}
         />
         <Route
-          path="/all-restaurants"
+          path="/all-restaurants/:id"
           element={
             isAuthenticated ? <AllRestaurants /> : <Navigate to="/login" />
           }

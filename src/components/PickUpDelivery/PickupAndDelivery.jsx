@@ -1,11 +1,18 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./PickupAndDelivery.css";
 import ecommercecheckout from '../../images/Ecommerce checkout laptop-amico 1.png'
 
 const PickupAndDelivery = () => {
   const [activeButton, setActiveButton] = useState("Pick-up");
+  const navigate = useNavigate();
+
   const handleButtonClick = (button) => {
     setActiveButton(button);
+  };
+  const handleReviewClick = () => {
+    
+    navigate("/payment");
   };
   return (
     <div>
@@ -42,7 +49,9 @@ const PickupAndDelivery = () => {
             <p className="total">Rs. 0</p>
         </div>
         <div className="review-section">
-          <span className="review-text">Review payment and address</span>
+        <button className="review-text" onClick={handleReviewClick}>
+            Review payment and address
+          </button>
         </div>
       </div>
     </div>

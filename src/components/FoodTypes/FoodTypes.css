@@ -1,15 +1,51 @@
-.food-container  {
+.slider-container {
+  position: relative;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 40px;
 }
 
-.card-row {
+.food-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 20px;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
   gap: 20px;
+}
+
+.food-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #dedddb;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-button.left {
+  left: 0;
+}
+
+.scroll-button.right {
+  right: 0;
+}
+
+.scroll-button.left.hidden {
+  display: none;
 }
 
 .card-wrapper {
@@ -18,6 +54,7 @@
   align-items: center;
   position: relative;
   cursor: pointer;
+  min-width: 120px;
 }
 
 .card {
@@ -58,4 +95,27 @@
 
 .card-wrapper.active .card {
   background-color: #06c167;
+}
+
+@media only screen and (max-width: 768px) {
+  .scroll-button {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .scroll-button {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .scroll-button {
+    display: none;
+  }
+
+  .food-container {
+    justify-content: space-around;
+    overflow-x: visible;
+  }
 }

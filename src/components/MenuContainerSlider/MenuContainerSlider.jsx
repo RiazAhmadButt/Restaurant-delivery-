@@ -23,7 +23,7 @@ const MenuContainerSlider = () => {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - menuContainerRef.current.offsetLeft;
-    const walk = x - startX; // Calculate how far the mouse has moved
+    const walk = x - startX; 
     menuContainerRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -53,7 +53,7 @@ const MenuContainerSlider = () => {
       </div>
       <div className="dropdown-button" onClick={handleSlideRight}>
         <div className="arrow-container">
-          <span className="vector">&gt;</span>
+          <span className="vectorss">&gt;</span>
         </div>
       </div>
     </div>

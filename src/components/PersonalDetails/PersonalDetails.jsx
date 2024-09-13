@@ -9,9 +9,9 @@ const PersonalDetails = () => {
         Personal details
       </div>
       {/* Cancel button */}
-      <div className="cancel-button">
+      {/* <div className="cancel-button">
         Cancel
-      </div>
+      </div> */}
 
       {/* Email input */}
       <div className="input-group email-group">

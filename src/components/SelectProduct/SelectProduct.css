@@ -32,6 +32,8 @@
 }
 .image-content img {
   border-radius: 10px;
+  width: 100%;
+  height: 100%;
 }
 
 .info-wrapper {
@@ -121,3 +123,6 @@
     font-size: 12px; /* Smaller text for mobile */
   }
 }
+
+
+

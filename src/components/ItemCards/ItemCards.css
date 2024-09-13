@@ -14,6 +14,12 @@
   border: 1px solid #ececec;
   border-radius: 15px;
   margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.item-product-card:hover {
+  transform: scale(1.05);
 }
 
 .image-container {
