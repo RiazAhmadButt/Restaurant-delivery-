@@ -2,19 +2,24 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../../images/image 8.png";
 import location from "../../images/Location.png";
-import downArrow from "../../images/Vector.png";
+import downArrow from "../../images/downArrow.png";
 import world from "../../images/world.png";
 import cart from "../../images/Cart.png";
 import like from "../../images/Like.png";
-import menuIcon from '../../images/Group 9932.png';
-import closeIcon from '../../images/close-icon-13577.png';
+import menuIcon from "../../images/Group 9932.png";
+import closeIcon from "../../images/close-icon-13577.png";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [locationInput, setLocationInput] = useState("");
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLocationChange = (e) => {
+    setLocationInput(e.target.value);
   };
 
   return (
@@ -40,7 +45,20 @@ const Navbar = () => {
           <div className="location-frame d-flex align-items-center">
             <div>
               <img src={location} alt="Location" className="location-icon" />
-              <span className="location-text">New York, USA</span>
+              <input
+                type="text"
+                className="location-text ms-2"
+                value={locationInput}
+                onChange={handleLocationChange}
+                placeholder="New York, USA"
+                style={{
+                  border: "none",
+                  outline: "none",
+                  backgroundColor: "transparent",
+                  color: "black",
+                  fontSize: "14px",
+                }}
+              />
             </div>
             <img src={downArrow} alt="Down Arrow" className="ms-2" />
           </div>

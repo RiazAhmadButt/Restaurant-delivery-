@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "./ItemCards.css";
 import productImage from "../../images/image 10.png";
-import product2 from "../../images/image 10 (1).png";
+import product2 from "../../images/image 31.png";
 import product3 from "../../images/image 11.png";
 import product4 from "../../images/image 12.png";
 import product5 from "../../images/image 13 (1).png";
@@ -13,6 +13,18 @@ import product7 from "../../images/image 14.png";
 import product8 from "../../images/image 15.png";
 import product9 from "../../images/image 16.png";
 import greenLike from "../../images/greenLike.png";
+import product10 from "../../images/pizza.png";
+import product11 from "../../images/pizza1.jpeg";
+import product12 from "../../images/pizza2.png";
+import product13 from "../../images/pizzaa.jpg";
+import product14 from "../../images/burger.jpg";
+import product15 from "../../images/burger.png";
+import product16 from "../../images/fries1.jpeg";
+import product17 from "../../images/fries2.jpeg";
+import product18 from "../../images/fries3.jpeg";
+import product19 from "../../images/fries4.jpeg";
+import product20 from "../../images/pasta.png";
+
 
 const cardData = [
   {
@@ -33,11 +45,7 @@ const cardData = [
     rating: "4.7 (120+)",
     catagory: "pizza",
   },
-  {
-    image: product4,
-    caption: "Product 4",
-    rating: "4.9 (180+)",
-  },
+  { image: product4, caption: "Product 4", rating: "4.9 (180+)" },
   {
     image: product5,
     caption: "Product 5",
@@ -48,33 +56,100 @@ const cardData = [
     image: product6,
     caption: "Product 6",
     rating: "4.8 (300+)",
-    catagory: "pizza",
+    catagory: "mexican",
   },
   {
     image: product7,
     caption: "Product 6",
     rating: "4.8 (300+)",
-    catagory: "pizza",
+    catagory: "sushi",
   },
   {
     image: product8,
     caption: "Product 6",
     rating: "4.8 (300+)",
-    catagory: "pizza",
+    catagory: "fries",
   },
   {
     image: product9,
     caption: "Product 6",
     rating: "4.8 (300+)",
+    catagory: "burger",
+  },
+  {
+    image: product10,
+    caption: "Product 5",
+    rating: "4.6 (90+)",
     catagory: "pizza",
+  },
+  {
+    image: product11,
+    caption: "Product 5",
+    rating: "4.6 (90+)",
+    catagory: "pizza",
+  },
+  {
+    image: product12,
+    caption: "Product 5",
+    rating: "4.6 (90+)",
+    catagory: "pizza",
+  },
+  {
+    image: product13,
+    caption: "Product 5",
+    rating: "4.6 (90+)",
+    catagory: "pizza",
+  },
+  {
+    image: product14,
+    caption: "Product 6",
+    rating: "4.8 (300+)",
+    catagory: "burger",
+  },
+  {
+    image: product15,
+    caption: "Product 6",
+    rating: "4.8 (300+)",
+    catagory: "burger",
+  },
+  {
+    image: product16,
+    caption: "Product 6",
+    rating: "4.8 (300+)",
+    catagory: "burger",
+  },
+  {
+    image: product17,
+    caption: "Product 6",
+    rating: "4.8 (300+)",
+    catagory: "fries",
+  },
+  {
+    image: product18,
+    caption: "Product 6",
+    rating: "4.8 (300+)",
+    catagory: "fries",
+  },
+  {
+    image: product19,
+    caption: "Product 6",
+    rating: "4.8 (300+)",
+    catagory: "fries",
+  },
+  {
+    image: product20,
+    caption: "Benediction",
+    rating: "4.5 (100+)",
+    catagory: "pasta",
   },
 ];
 
-const ItemCards = () => {
+const ItemCards = ({ selectedCategory }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const navigate = useNavigate();
 
-  const handleSelectItem = (index) => {
+  const handleSelectItem = (index, event) => {
+    event.stopPropagation();
     if (selectedItems.includes(index)) {
       setSelectedItems(selectedItems.filter((item) => item !== index));
     } else {
@@ -86,11 +161,14 @@ const ItemCards = () => {
     const product = cardData[index];
     navigate(`/all-restaurants/${index}`, { state: { product } });
   };
+  const filteredData = selectedCategory
+    ? cardData.filter((card) => card.catagory === selectedCategory)
+    : cardData;
 
   return (
     <div className="container items-cards-container">
       <div className="items-cards-container">
-        {cardData.map((card, index) => (
+        {filteredData.map((card, index) => (
           <div
             key={index}
             onClick={() => handleCardClick(index)}
@@ -104,7 +182,7 @@ const ItemCards = () => {
               />
               <div
                 className="like-icon"
-                onClick={() => handleSelectItem(index)}
+                onClick={(event) => handleSelectItem(index, event)}
               >
                 {selectedItems.includes(index) ? (
                   <FontAwesomeIcon

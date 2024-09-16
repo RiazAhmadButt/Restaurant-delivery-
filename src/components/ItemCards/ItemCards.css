@@ -65,6 +65,7 @@
   color: #000000;
   line-height: 19.07px;
 }
+
 .product-catagory {
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
@@ -98,12 +99,24 @@
   }
 
   .product-card {
-    width: 100%; /* Full width on tablets and smaller screens */
+    width: 100%;
   }
 }
 
 @media (max-width: 576px) {
   .product-card {
-    width: 100%; /* Full width on mobile screens */
+    width: 100%;
+  }
+}
+
+/* For screens 375px and below */
+@media (max-width: 375px) {
+  .items-cards-container {
+    padding: 0;
+    justify-content: center;
+  }
+
+  .item-product-card {
+    width: 100%;
   }
 }
