@@ -16,6 +16,49 @@
 /* .select-container-parent{
   background-color:  #F7F7F7;
 } */
+.custom-modal .modal-dialog {
+  max-width: 900px; /* Adjust this value to your desired width */
+}
+
+.custom-modal .modal-content {
+  width: 100%; /* Ensure it takes up full width of the dialog */
+}
+
+.modal-dialog {
+  max-width: 1000px; /* This will set the maximum width of the modal */
+  width: 100%; /* Optional: Set a percentage width */
+}
+
+.modal-content {
+  width: 100%; /* Ensures the modal content takes full width */
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  position: relative;
+  width: 70%;
+  max-width: 900px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.select-container {
+  width: 100%;
+}
+
 
 .header-frame {
   max-width: 975px;

@@ -14,6 +14,7 @@ import Home from "./pages/Home/Home";
 import AllRestaurants from "./pages/AllRestaurants/AllRestaurants";
 import SelectItem from "./pages/SelectItem/SelectItem";
 import Payment from "./pages/Payment/Payment";
+import {CartProvider} from './Context/CartContext';
 
 function App() {
   // State to manage authentication
@@ -30,6 +31,7 @@ function App() {
   };
 
   return (
+    <CartProvider>
     <Router>
       {isAuthenticated && <Navbar handleLogout={handleLogout} />}{" "}
       {/* Navbar only if authenticated */}
@@ -52,16 +54,20 @@ function App() {
           path="/"
           element={isAuthenticated ? <Home /> : <Navigate to="/login" />}
         />
-        <Route
+       
+       <Route
           path="/all-restaurants/:id"
           element={
-            isAuthenticated ? <AllRestaurants /> : <Navigate to="/login" />
+            isAuthenticated ? (
+             
+                <AllRestaurants />
+             
+            ) : (
+              <Navigate to="/login" />
+            )
           }
         />
-        <Route
-          path="/select-item"
-          element={isAuthenticated ? <SelectItem /> : <Navigate to="/login" />}
-        />
+        
         <Route
           path="/payment"
           element={isAuthenticated ? <Payment /> : <Navigate to="/login" />}
@@ -69,6 +75,7 @@ function App() {
       </Routes>
       {isAuthenticated && <Footer />}
     </Router>
+    </CartProvider>
   );
 }
 

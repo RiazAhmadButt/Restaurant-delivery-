@@ -1,11 +1,12 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import image20 from "../../images/image 20.png";
 import plus from "../../images/Vector.png";
+import SelectItem from '../../pages/SelectItem/SelectItem'; 
 import "./RestaurantsProducts.css";
 
 const RestaurantsProducts = () => {
-  const navigate = useNavigate();
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const products = [
     {
@@ -54,18 +55,28 @@ const RestaurantsProducts = () => {
       imageSrc: image20,
     },
   ];
+
   const handleProductClick = (product) => {
-    navigate("/select-item", { state: { product } });
+    setSelectedProduct(product);
+    setShowModal(true); // Open the modal when a product is clicked
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false); // Close the modal
+    setSelectedProduct(null); // Clear selected product
   };
 
   return (
     <>
       {products.map((item, index) => (
-        <div>
+        <div key={index}>
           <div>
             <p className="dishes">{item.dishes}</p>
           </div>
-          <div className="product-card" key={index} onClick={() => handleProductClick(item)}>
+          <div
+            className="product-card"
+            onClick={() => handleProductClick(item)}
+          >
             <div className="product-info">
               <h3 className="product-title">{item.title}</h3>
               <p className="product-price">Rs. {item.price}</p>
@@ -82,6 +93,15 @@ const RestaurantsProducts = () => {
           </div>
         </div>
       ))}
+
+      {/* Conditionally render the modal */}
+      {showModal && (
+        <SelectItem
+          product={selectedProduct} // Pass selected product details to the modal
+          showModal={showModal} // Pass showModal to control visibility
+          onClose={handleCloseModal} // Function to close modal
+        />
+      )}
     </>
   );
 };

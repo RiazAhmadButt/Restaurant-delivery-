@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../../images/image 8.png";
 import location from "../../images/Location.png";
@@ -8,11 +8,13 @@ import cart from "../../images/Cart.png";
 import like from "../../images/Like.png";
 import menuIcon from "../../images/Group 9932.png";
 import closeIcon from "../../images/close-icon-13577.png";
+import { CartContext } from '../../Context/CartContext';
 import "./Navbar.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [locationInput, setLocationInput] = useState("");
+  const { getItemCount } = useContext(CartContext);
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
@@ -77,8 +79,11 @@ const Navbar = () => {
             <div className="icon-frame">
               <img src={like} alt="Like" className="icon" />
             </div>
-            <div className="icon-frame">
+            <div className="icon-frame position-relative">
               <img src={cart} alt="Cart" className="icon" />
+              {getItemCount() > 0 && (
+                <span className="cart-item-count">{getItemCount()}</span>
+              )}
             </div>
             <button className="btn signup-btn">Sign Up</button>
           </div>
@@ -111,8 +116,11 @@ const Navbar = () => {
                 <img src={like} alt="Like" className="icon" />
               </div>
               <div className="icon-frame">
-                <img src={cart} alt="Cart" className="icon" />
-              </div>
+              <img src={cart} alt="Cart" className="icon" />
+              {getItemCount() > 0 && (
+                <span className="cart-item-count">{getItemCount()}</span>
+              )}
+            </div>
             </div>
             <button className="btn signup-btn mt-4">Sign Up</button>
           </div>

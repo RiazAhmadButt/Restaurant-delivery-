@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   max-width: 715px;
-  height: 152px;
+  height: auto;
   padding: 16px;
   border: 1px solid #dedddb;
   border-radius: 8px;

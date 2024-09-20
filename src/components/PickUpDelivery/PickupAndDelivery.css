@@ -110,6 +110,25 @@
   font-weight: 400;
   line-height: 19.07px;
 }
+.cart-item {
+  margin: 10px 0; /* Add some space between items */
+}
+
+.cart-item-content {
+  display: flex; /* Use Flexbox for layout */
+  align-items: center; /* Center items vertically */
+}
+
+.cart-item-image {
+  width: 150px; /* Set width */
+  height: 150px; /* Set height */
+  border-radius: 10px; /* Rounded corners */
+  margin-right: 10px; /* Space between image and details */
+}
+
+.cart-item-details {
+  flex-grow: 1; /* Allow details to take the remaining space */
+}
 
 
 /* --- Responsive Styles --- */
