@@ -9,9 +9,11 @@ import like from "../../images/Like.png";
 import menuIcon from "../../images/Group 9932.png";
 import closeIcon from "../../images/close-icon-13577.png";
 import { CartContext } from '../../Context/CartContext';
+import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [locationInput, setLocationInput] = useState("");
   const { getItemCount } = useContext(CartContext);
@@ -23,6 +25,10 @@ const Navbar = () => {
   const handleLocationChange = (e) => {
     setLocationInput(e.target.value);
   };
+
+  const handleSignUp=()=>{
+    navigate('./')
+  }
 
   return (
     <nav className="custom-navbar">
@@ -85,7 +91,7 @@ const Navbar = () => {
                 <span className="cart-item-count">{getItemCount()}</span>
               )}
             </div>
-            <button className="btn signup-btn">Sign Up</button>
+            <button className="btn signup-btn" onClick={handleSignUp}>Sign Up</button>
           </div>
         </div>
 

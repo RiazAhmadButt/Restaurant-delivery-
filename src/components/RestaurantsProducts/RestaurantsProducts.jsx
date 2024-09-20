@@ -58,12 +58,12 @@ const RestaurantsProducts = () => {
 
   const handleProductClick = (product) => {
     setSelectedProduct(product);
-    setShowModal(true); // Open the modal when a product is clicked
+    setShowModal(true); 
   };
 
   const handleCloseModal = () => {
-    setShowModal(false); // Close the modal
-    setSelectedProduct(null); // Clear selected product
+    setShowModal(false); 
+    setSelectedProduct(null); 
   };
 
   return (
@@ -97,8 +97,8 @@ const RestaurantsProducts = () => {
       {/* Conditionally render the modal */}
       {showModal && (
         <SelectItem
-          product={selectedProduct} // Pass selected product details to the modal
-          showModal={showModal} // Pass showModal to control visibility
+          product={selectedProduct} 
+          showModal={showModal} 
           onClose={handleCloseModal} // Function to close modal
         />
       )}

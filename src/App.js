@@ -16,7 +16,9 @@ import SelectItem from "./pages/SelectItem/SelectItem";
 import Payment from "./pages/Payment/Payment";
 import {CartProvider} from './Context/CartContext';
 
+
 function App() {
+  
   // State to manage authentication
   const [isAuthenticated, setIsAuthenticated] = useState(true);
 
@@ -29,6 +31,8 @@ function App() {
   const handleLogout = () => {
     setIsAuthenticated(false);
   };
+
+
 
   return (
     <CartProvider>
