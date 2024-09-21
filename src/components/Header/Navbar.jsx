@@ -8,7 +8,7 @@ import cart from "../../images/Cart.png";
 import like from "../../images/Like.png";
 import menuIcon from "../../images/Group 9932.png";
 import closeIcon from "../../images/close-icon-13577.png";
-import { CartContext } from '../../Context/CartContext';
+import { CartContext } from "../../Context/CartContext";
 import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
@@ -17,6 +17,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [locationInput, setLocationInput] = useState("");
   const { getItemCount } = useContext(CartContext);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
@@ -26,9 +27,17 @@ const Navbar = () => {
     setLocationInput(e.target.value);
   };
 
-  const handleSignUp=()=>{
-    navigate('./')
-  }
+  const handleSignUp = () => {
+    navigate("./");
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false); 
+  };
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);  
+  };
 
   return (
     <nav className="custom-navbar">
@@ -91,7 +100,16 @@ const Navbar = () => {
                 <span className="cart-item-count">{getItemCount()}</span>
               )}
             </div>
-            <button className="btn signup-btn" onClick={handleSignUp}>Sign Up</button>
+             {/* Conditionally render the Sign Up or Logout button */}
+             {!isLoggedIn ? (
+              <button className="btn signup-btn" onClick={handleSignUp}>
+                Sign Up
+              </button>
+            ) : (
+              <button className="btn logout-btn" onClick={handleLogout}>
+                Logout
+              </button>
+            )}
           </div>
         </div>
 
@@ -122,11 +140,11 @@ const Navbar = () => {
                 <img src={like} alt="Like" className="icon" />
               </div>
               <div className="icon-frame">
-              <img src={cart} alt="Cart" className="icon" />
-              {getItemCount() > 0 && (
-                <span className="cart-item-count">{getItemCount()}</span>
-              )}
-            </div>
+                <img src={cart} alt="Cart" className="icon" />
+                {getItemCount() > 0 && (
+                  <span className="cart-item-count">{getItemCount()}</span>
+                )}
+              </div>
             </div>
             <button className="btn signup-btn mt-4">Sign Up</button>
           </div>

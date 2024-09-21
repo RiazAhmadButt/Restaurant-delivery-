@@ -38,10 +38,12 @@
 
 .scroll-button.left {
   left: 0;
+  display: none;
 }
 
 .scroll-button.right {
   right: 0;
+  display: none;
 }
 
 .scroll-button.left.hidden {
@@ -54,7 +56,6 @@
   align-items: center;
   position: relative;
   cursor: pointer;
-  min-width: 120px;
 }
 
 .card {
@@ -99,9 +100,37 @@
   background-color: #06c167;
 }
 
+/* Adjust card size for smaller screens to fit 4-5 cards */
 @media only screen and (max-width: 768px) {
+  .card {
+    width: 40px;
+    height: 40px;
+  }
+
+  .card-image-container {
+    width: 20px;
+    height: 20px;
+  }
+
+  .card-image {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .type-card-caption {
+    padding: 4px 0;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 22px;
+  }
+
   .scroll-button {
     display: block;
+  }
+  .food-container {
+    gap: 10px;
   }
 }
 
@@ -109,15 +138,21 @@
   .scroll-button {
     display: block;
   }
+  .food-container {
+    gap: 10px;
+  }
 }
 
 @media only screen and (min-width: 1025px) {
   .scroll-button {
     display: none;
   }
-
+  .card-wrapper {
+    min-width: 50px;
+  }
   .food-container {
     justify-content: space-around;
     overflow-x: visible;
+    gap: 10px;
   }
 }
