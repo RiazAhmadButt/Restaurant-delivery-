@@ -4,143 +4,52 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "./ItemCards.css";
 import productImage from "../../images/image 10.png";
-import product2 from "../../images/image 31.png";
-import product3 from "../../images/image 11.png";
-import product4 from "../../images/image 12.png";
-import product5 from "../../images/image 13 (1).png";
-import product6 from "../../images/image 13.png";
-import product7 from "../../images/image 14.png";
-import product8 from "../../images/image 15.png";
-import product9 from "../../images/image 16.png";
+import product4 from "../../images/pizza2.png";
+import product5 from "../../images/pizza1.jpeg";
+import product6 from "../../images/Making-Waves-Indian-Restaurants-London-Dining-FT-MAG0723-21e40f8b4d234a99bb53edb6608acfab.jpg";
+import product7 from "../../images/fries.png";
+import product8 from "../../images/fries1.jpeg";
+import product9 from "../../images/images (1).jpeg";
 import greenLike from "../../images/greenLike.png";
-import product10 from "../../images/pizza.png";
-import product11 from "../../images/pizza1.jpeg";
-import product12 from "../../images/pizza2.png";
-import product13 from "../../images/pizzaa.jpg";
-import product14 from "../../images/burger.jpg";
-import product15 from "../../images/burger.png";
-import product16 from "../../images/fries1.jpeg";
-import product17 from "../../images/fries2.jpeg";
-import product18 from "../../images/fries3.jpeg";
-import product19 from "../../images/fries4.jpeg";
-import product20 from "../../images/pasta.png";
 
-
+// Define your card data
 const cardData = [
   {
     image: productImage,
-    caption: "Benediction",
+    caption: "epicurious",
     rating: "4.5 (100+)",
     catagory: "pasta",
   },
-  {
-    image: product2,
-    caption: "DELISH PIZZA BAR - Cantt",
-    rating: "4.8 (150+)",
-    catagory: "pizza",
-  },
-  {
-    image: product3,
-    caption: "Feeha",
-    rating: "4.7 (120+)",
-    catagory: "pizza",
-  },
-  { image: product4, caption: "Product 4", rating: "4.9 (180+)" },
+  { image: product4, caption: "Renchers", rating: "4.9 (180+)", catagory: "pizza" }, // Added category
   {
     image: product5,
-    caption: "Product 5",
+    caption: "cheezious",
     rating: "4.6 (90+)",
     catagory: "pizza",
   },
   {
     image: product6,
-    caption: "Product 6",
+    caption: "Indian Restaurant",
     rating: "4.8 (300+)",
     catagory: "mexican",
   },
   {
     image: product7,
-    caption: "Product 6",
+    caption: "Renchers",
     rating: "4.8 (300+)",
-    catagory: "sushi",
+    catagory: "fries",
   },
   {
     image: product8,
-    caption: "Product 6",
+    caption: "cheezious",
     rating: "4.8 (300+)",
     catagory: "fries",
   },
   {
     image: product9,
-    caption: "Product 6",
+    caption: "Italian Restaurant",
     rating: "4.8 (300+)",
     catagory: "burger",
-  },
-  {
-    image: product10,
-    caption: "Product 5",
-    rating: "4.6 (90+)",
-    catagory: "pizza",
-  },
-  {
-    image: product11,
-    caption: "Product 5",
-    rating: "4.6 (90+)",
-    catagory: "pizza",
-  },
-  {
-    image: product12,
-    caption: "Product 5",
-    rating: "4.6 (90+)",
-    catagory: "pizza",
-  },
-  {
-    image: product13,
-    caption: "Product 5",
-    rating: "4.6 (90+)",
-    catagory: "pizza",
-  },
-  {
-    image: product14,
-    caption: "Product 6",
-    rating: "4.8 (300+)",
-    catagory: "burger",
-  },
-  {
-    image: product15,
-    caption: "Product 6",
-    rating: "4.8 (300+)",
-    catagory: "burger",
-  },
-  {
-    image: product16,
-    caption: "Product 6",
-    rating: "4.8 (300+)",
-    catagory: "burger",
-  },
-  {
-    image: product17,
-    caption: "Product 6",
-    rating: "4.8 (300+)",
-    catagory: "fries",
-  },
-  {
-    image: product18,
-    caption: "Product 6",
-    rating: "4.8 (300+)",
-    catagory: "fries",
-  },
-  {
-    image: product19,
-    caption: "Product 6",
-    rating: "4.8 (300+)",
-    catagory: "fries",
-  },
-  {
-    image: product20,
-    caption: "Benediction",
-    rating: "4.5 (100+)",
-    catagory: "pasta",
   },
 ];
 
@@ -157,13 +66,18 @@ const ItemCards = ({ selectedCategory }) => {
     }
   };
 
-  const handleCardClick = (index) => {
-    const product = cardData[index];
-    navigate(`/all-restaurants/${index}`, { state: { product } });
-  };
+  // Filter data based on the selected category
   const filteredData = selectedCategory
     ? cardData.filter((card) => card.catagory === selectedCategory)
     : cardData;
+
+  // Use filteredData in handleCardClick to pass the correct product
+  const handleCardClick = (index) => {
+    const product = filteredData[index]; // Use filteredData
+    navigate(`/all-restaurants/${index}`, {
+      state: { product, selectedCategory },
+    });
+  };
 
   return (
     <div className="container items-cards-container">
@@ -171,7 +85,7 @@ const ItemCards = ({ selectedCategory }) => {
         {filteredData.map((card, index) => (
           <div
             key={index}
-            onClick={() => handleCardClick(index)}
+            onClick={() => handleCardClick(index)} // Passing filtered index
             className="item-product-card"
           >
             <div className="image-container">

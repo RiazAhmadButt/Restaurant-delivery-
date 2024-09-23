@@ -30,7 +30,13 @@ const FoodTypes = ({ onSelectCategory }) => {
   // Handle card click
   const handleCardClick = (index) => {
     setActiveIndex(index);
-    onSelectCategory(cardData[index].caption.toLowerCase());
+    // onSelectCategory(cardData[index].caption.toLowerCase());
+    const category = cardData[index].caption.toLowerCase();
+    if (category === "top eats") {
+      onSelectCategory(null); // Pass null or "" to show all restaurants
+    } else {
+      onSelectCategory(category);
+    }
   };
 
   // Scroll left and right functions

@@ -19,6 +19,7 @@ const SelectProduct = () => {
           <p className="select-title">Pasta . Pizza . Fast food . Wrap & rolls</p>
           <p className="selectItem">{product.caption}</p>
           <p className="selectItemprice">Rs. 9.99 service fee</p>
+          <p className="product-rating">Rating: {product.rating}</p>
         </div>
       </div>
       <div className="favourites-button-container">

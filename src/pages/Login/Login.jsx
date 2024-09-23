@@ -3,12 +3,16 @@ import { Link } from "react-router-dom";
 import logo2 from "../../images/image logo copy 2.png";
 import vector1 from "../../images/Vector 1.png";
 import vector2 from "../../images/Vector 2.png";
+import {auth} from "../../firebase/firebase-config";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   // Email validation regex
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -38,15 +42,24 @@ const Login = () => {
   };
 
   // Submit handler
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log("Form submitted successfully!");
-      // Proceed with form submission (e.g., API call)
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        console.log("Logged in successfully!");
+        onLogin(); // Trigger the login function passed from App
+        navigate("/home"); // Navigate to /home after successful login
+      } catch (error) {
+        console.error("Login error", error.message);
+        alert("Login failed: " + error.message);
+      }
     } else {
       console.log("Validation failed.");
     }
   };
+
+
 
   return (
     <div>

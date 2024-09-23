@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import logo2 from "../../images/image logo copy 2.png";
 import vector1 from "../../images/Vector 1.png";
 import vector2 from "../../images/Vector 2.png";
+import { auth } from "../../firebase/firebase-config";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import "../Login/Login.css";
 
 const SignUp = () => {
@@ -44,16 +46,26 @@ const SignUp = () => {
   };
 
   // Submit handler
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log("Form submitted successfully!");
-      // Perform form submission (e.g., send data to server)
+      try {
+        // Use createUserWithEmailAndPassword and pass auth as the first argument
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        console.log("User signed up:", user);
+        alert("Sign up successful!");
+      } catch (error) {
+        console.error("Error signing up:", error.message);
+        alert("Error signing up: " + error.message);
+      }
     } else {
-      console.log("Form validation failed.");
+      console.log("Validation failed.");
     }
   };
 
+
+  
   return (
     <div>
       <div className="login-container">
