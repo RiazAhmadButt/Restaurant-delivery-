@@ -93,8 +93,9 @@
 }
 
 .top-heading-price-parent {
-  width: 100%; /* Change to 100% for responsiveness */
-  height: auto; /* Adjust height to auto */
+  width: 100%;
+  height: auto; 
+  padding: 40px;
 }
 
 .Loaded-fries-text {
@@ -423,5 +424,8 @@
   .modal-content {
     border-radius: 0px;
     margin: 0px;
+  }
+  .top-heading-price-parent {
+    padding: 5px;
   }
 }

@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
+import plus from "../../images/Vector.png";
+import bin from "../../images/Bin.png";
 import "./PickupAndDelivery.css";
 import ecommercecheckout from "../../images/Ecommerce checkout laptop-amico 1.png";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const PickupAndDelivery = () => {
   const [activeButton, setActiveButton] = useState("Pick-up");
   const navigate = useNavigate();
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, removeFromCart, addToCart } = useContext(CartContext);
 
   const handleButtonClick = (button) => {
     setActiveButton(button);
@@ -16,12 +18,17 @@ const PickupAndDelivery = () => {
     navigate("/payment");
   };
 
-
   const totalPrice = cartItems.reduce((total, item) => {
-    return total + item.price * item.quantity; // Assuming item.price is the price per unit
+    return total + item.price * item.quantity;
   }, 0);
 
+  const handleDelete = (itemId) => {
+    removeFromCart(itemId);
+  };
 
+  const handleAdd = (item) => {
+    addToCart({ ...item, quantity: 1 }); // Add one more of the item
+  };
 
   return (
     <div>
@@ -59,7 +66,11 @@ const PickupAndDelivery = () => {
             </div>
             <div className="totalPrice">
               <p className="total">
-                Total <span className="incl">(incl.vat)</span>{" "}
+                Total{" "}
+                <span className="incl">
+                  <br />
+                  (incl.vat)
+                </span>{" "}
               </p>
               <p className="total">Rs. 0</p>
             </div>
@@ -71,32 +82,74 @@ const PickupAndDelivery = () => {
           </>
         ) : (
           <div className="cart-items">
+            <div className="item-txt">
+              <p>Your items</p>
+            </div>
             {cartItems.map((item, index) => (
-  <div key={index} className="cart-item">
-    <div className="cart-item-content">
-      <img
-        src={item.image}
-        alt={item.name}
-        className="cart-item-image"
-      />
-      <div className="cart-item-details">
-        <p>
-          {item.name} - {item.quantity} x {item.selectedOption}
-        </p>
-        <p>Price: Rs. {item.price * item.quantity}</p>
-      </div>
-    </div>
-  </div>
-))}
+              <div key={index} className="cart-item">
+                <div className="cart-item-content">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="cart-item-image"
+                  />
+                  <div className="cart-item-details">
+                    <span className="item-name">{item.title}</span>
+                    <span className="price-txt">
+                      {item.name} {item.quantity} x {item.selectedOption}
+                    </span>
+                    <span className="price-txt">
+                      Rs. {item.price * item.quantity}
+                    </span>
+                    <div className="parent-cart-btns">
+                      <div className="cart-btns">
+                        <img
+                          src={bin}
+                          alt="Delete"
+                          onClick={() => handleDelete(item.id)}
+                        />
+                        <span>{item.quantity}</span>
+                        <img
+                          src={plus}
+                          alt="Plus"
+                          onClick={() => handleAdd(item)}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="cart-details-parent">
+                  <div className="subTotal-text">
+                    <span>Subtotal</span>
+                    <span>{item.price * item.quantity}</span>
+                  </div>
+                  <div className="subTotal-text">
+                    <span>Standard delivery</span>
+                    <span>free</span>
+                  </div>
+                  <div className="subTotal-text">
+                    <span>Service fee</span>
+                    <span>9.9</span>
+                  </div>
+                </div>
+              </div>
+            ))}
 
             <div className="totalPrice">
-                  <p className="total">
-                    Total <span className="incl">(incl.vat)</span>{" "}
-                  </p>
-                  <p className="total">Rs. {totalPrice}</p>
-                </div>
-            <div className="review-section">
-              <button className="review-text" onClick={handleReviewClick}>
+              <p className="total">
+                Total{" "}
+                <span className="incl">
+                  {" "}
+                  <br /> (incl.vat)
+                </span>{" "}
+              </p>
+              <p className="total">Rs. {totalPrice}</p>
+            </div>
+            <div className="review-section review-bg-color">
+              <button
+                className="review-text review-txt-color"
+                onClick={handleReviewClick}
+              >
                 Review payment and address
               </button>
             </div>

@@ -1,62 +1,81 @@
 .menu-container {
-    display: flex;
-    align-items: center;
-    margin: 20px 20px;
-    width: 80%;
+  display: flex;
+  align-items: center;
+  margin: 20px 20px;
+  width: 80%;
+}
+
+.menu-categories-container {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  flex-grow: 1;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+  gap: 10px;
+  cursor: grab; 
+  max-width: 100%;
+}
+
+.menu-categories-container:active {
+  cursor: grabbing; 
+}
+
+.menu-category {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.dropdown-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.arrow-container {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+}
+
+.vectorss {
+  font-size: 20px;
+  color: black;
+}
+
+.menu-categories-container::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-categories-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  
+  .menu-container {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0; 
+    width: 100%;
   }
   
   .menu-categories-container {
-    display: flex;
-    overflow: hidden;
-    white-space: nowrap;
-    flex-grow: 1;
-    padding: 10px 0;
-    scroll-behavior: smooth;
-    gap: 10px;
-    cursor: grab; 
+    padding: 0; 
   }
-  
-  .menu-categories-container:active {
-    cursor: grabbing; 
-  }
-  
-  .menu-category {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    flex-shrink: 0;
-  }
-  
+
   .dropdown-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin-left: 10px;
+    display: none; 
   }
-  
-  .arrow-container {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    color: white;
-  }
-  
-  .vectorss {
-    font-size: 20px;
-    color: black;
-  }
-  
-  .menu-categories-container::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .menu-categories-container {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
+}

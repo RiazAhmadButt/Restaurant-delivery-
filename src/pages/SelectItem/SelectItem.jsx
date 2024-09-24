@@ -31,8 +31,8 @@ const SelectItem = ({ product, showModal, onClose }) => {
       selectedOption,
       image: image,
     };
-    addToCart(cartItem); // Add the item to the cart
-    onClose(); // Close the modal
+    addToCart(cartItem); 
+    onClose();
     
   };
 
